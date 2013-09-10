@@ -5,7 +5,59 @@
 <body>
 
 <script type="text/javascript">
-  alert('Hello World!');
+  // var fname = prompt("Your name sir");
+  // var lname = prompt("what do you take me for? What be Your christian name?");
+  // alert(fname + " " + lname)
+
+var rand_number = parseInt(Math.random() * 100, 10) +1;
+
+alert("Randomber is" + rand_number)
+
+
+var guess = function(user_number){
+	
+	if (user_number == rand_number){
+		alert("Correct");
+	}
+	else {
+		var repeat = prompt("Try again");
+		guess(repeat)
+	}
+}
+
+var user_number = prompt("Enter a number. 1 thru 100");
+
+	if (user_number == rand_number)
+	{
+		alert("Telepathic dude")
+  }
+	else
+	{
+		guess(user_number)
+	}
+
+
+ //  var rand_number = parseInt(Math.random() * 100, 10) +1;
+ //  alert(rand_number);
+ //  
+ //  //alert(user_number);
+
+ //  if (user_number != rand_number){
+
+ //  	user_number = prompt("retry");
+ //  	}  
+	  
+	//   // if (rand_number > user_number) {
+	//   // 	alert("Your number is not big enough");
+	//   // 	}
+
+	//   // else {
+	//   // 	alert("The Rent is too damn high")
+	
+	// 		// }
+	// else {
+	// 	alert("you got it")
+	// }
 </script>
 
 </body>
