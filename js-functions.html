@@ -18,9 +18,16 @@ var yell = function(lowercase){
 
  //ask funciton
 
-var ask = function(imperative) {
-	return("Can you please " + imperative + "?");
-};
+// var ask = function(imperative) {
+// 	return("Can you please " + imperative + "?");
+// };
+
+	///anyonymous version
+	function ask(imperative) {
+		return("Can you please " + imperative + "?")
+	};
+
+
 
 // serverFunciton
 
@@ -28,11 +35,17 @@ var ask = function(imperative) {
 	// This will be like Butler 2.0!
 	// It will call the given function with one string and prepend it with the other.
 
+// serve messege with explicit functions
 var serveMessage = function(string1, string2, func) {
 	return(string1 + ": " + func(string2));
 };
 
 serveMessage("Bill", "shut the door", yell);
+
+// serveMessage with anonymous functions 
+
+var serveMessage = 
+
 
 </script>
 
