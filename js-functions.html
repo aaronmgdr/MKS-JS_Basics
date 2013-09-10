@@ -8,24 +8,31 @@
 
 	
 
-// var yell = function(lowercase){
-// 	var test = (lowercase.toUpperCase() + "!"); 
-// 	return (test);
-// };
+var yell = function(lowercase){
+	var test = (lowercase.toUpperCase() + "!"); 
+	return (test);
+};
 
 
 
 
-// ask funciton
+ //ask funciton
 
 var ask = function(imperative) {
 	return("Can you please " + imperative + "?");
 };
 
-ask("open the door")
-//
+// serverFunciton
 
+	//Write a serveMessage function that takes a string, another string, and a function:
+	// This will be like Butler 2.0!
+	// It will call the given function with one string and prepend it with the other.
 
+var serveMessage = function(string1, string2, func) {
+	return(string1 + ": " + func(string2));
+};
+
+serveMessage("Bill", "shut the door", yell);
 
 </script>
 
