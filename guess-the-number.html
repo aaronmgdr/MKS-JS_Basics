@@ -34,11 +34,26 @@ var tries = 0;
 var games = 0;
 
 
+
  //this generates a number between 0 and 100 (0 not included)
 
   var rand_number = parseInt(Math.random() * 100, 10) + 1;
 
-  var secret = parseInt(Math.random() * 100, 10) + 1;
+  var landmine = parseInt(Math.random() * 100, 10) + 1;
+
+  var guesses = 50
+  // difference between guess and landmine
+
+  var dif = Math.abs(guesses - landmine);
+ 
+
+		if (guesses === landmine) {
+		$('#response').text("You Lost the game")
+		}
+		
+		else {
+		$('#response').text("Your Guess is " + dif + " from the landmine");  
+		}; 
 
 $('#new-game').on('click', function() {
 	 rand_number = parseInt(Math.random() * 100, 10) + 1;
