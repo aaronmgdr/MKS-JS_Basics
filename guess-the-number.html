@@ -13,7 +13,8 @@
 <br />
 <input id="user-input" type="text" />
 <input id="submit-button" type="button" value="Submit My Guess" />
-
+<br>
+<label id="landmine"></label>
 <br />
 <br />
 <label id="guess-count"> </label>
@@ -41,23 +42,16 @@ var games = 0;
 
   var landmine = parseInt(Math.random() * 100, 10) + 1;
 
-  var guesses = 50
-  // difference between guess and landmine
-
-  var dif = Math.abs(guesses - landmine);
  
-
-		if (guesses === landmine) {
-		$('#response').text("You Lost the game")
-		}
-		
-		else {
-		$('#response').text("Your Guess is " + dif + " from the landmine");  
-		}; 
+  
 
 $('#new-game').on('click', function() {
 	 rand_number = parseInt(Math.random() * 100, 10) + 1;
-	 $('#response').text("The Game of Thrones has Begun")
+	 landmine = parseInt(Math.random() * 100, 10) + 1;
+	 
+	$('#response').text("The Game of Thrones has Begun")
+ 	$('#guess-count').text("")
+ 	$('#landmine').text("")
 
 		// should set shown value in textbox to blank
 		 document.getElementById("user-input").value = "";
@@ -67,14 +61,27 @@ $('#new-game').on('click', function() {
 	 		$('#games-counter').text(games);
 });
 
+var dif = 0;
+
 
 // asks user for a number and sets input equal to that number 
  $('#submit-button').on('click', function () {
 	 var input = $('#user-input').val();
-	  // should count the guesses in the game
-	  tries += 1;
+	  dif = (Math.abs(input - landmine));
+	 // should count the guesses in the game
+	 tries += 1;
 		$('#guess-count').text("Number of Guesses for Current Game:" + tries);	 
 
+	// difference between guess and landmine
+	  
+	 		if (input == landmine) {
+		$('#landmine').text("You Lost the game")
+		}
+		
+		else {
+		$('#landmine').text("Your Guess is " + dif + " from the landmine");  
+		}; 
+		//end landmine 
 
 	 	if (rand_number == input)
 	 		{ 
